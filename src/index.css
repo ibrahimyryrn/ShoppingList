@@ -134,3 +134,19 @@ button:hover {
   text-decoration: line-through;
   text-decoration-color: black;
 }
+
+/* Styles for all iPhones */
+@media only screen and (min-device-width: 375px) /* minimum width for iPhones */ and (max-device-width: 812px) /* maximum width for iPhones (iphone x and 11 pro) */ and (-webkit-device-pixel-ratio: 3) /* retina display */ {
+  /* Add your styles here */
+  body {
+    font-size: 16px; /* Increase font size for better readability on smaller screens */
+  }
+}
+
+/* Styles for iPhone landscape orientation */
+@media only screen and (min-device-width: 812px) /* minimum width for iPhones (iphone x and 11 pro) */ and (max-device-width: 812px) /* maximum width for iPhones (iphone x and 11 pro) */ and (-webkit-device-pixel-ratio: 3) /* retina display */ and (orientation: landscape) {
+  /* Add your landscape-specific styles here */
+  .header {
+    height: 60px; /* Adjust header height for landscape orientation */
+  }
+}
