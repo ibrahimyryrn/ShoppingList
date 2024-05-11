@@ -40,15 +40,17 @@ function App() {
   }
 
   return (
-    <div className="app-background">
-      <div className="main-container">
-        <AddItem onAddItem={handleAddItem} />
-        <ItemsList
-          items={items}
-          onDelete={handleDelete}
-          onIncrease={handleIncrease}
-          onDecrease={handleDecrease}
-        />
+    <div className="App">
+      <div className="app-background">
+        <div className="main-container">
+          <AddItem onAddItem={handleAddItem} />
+          <ItemsList
+            items={items}
+            onDelete={handleDelete}
+            onIncrease={handleIncrease}
+            onDecrease={handleDecrease}
+          />
+        </div>
       </div>
     </div>
   );
