@@ -1,4 +1,4 @@
-import useLocalStorageState from "use-local-storage-state";
+import { useEffect, useState } from "react";
 import AddItem from "./components/AddItem";
 import ItemsList from "./components/ItemsList";
 import "./index.css";
@@ -9,7 +9,14 @@ const initialItem = [
 ];
 
 function App() {
-  const [items, setItems] = useLocalStorageState("items", initialItem);
+  const [items, setItems] = useState(
+    JSON.parse(localStorage.getItem("items")) || initialItem
+  );
+
+  // Store items in localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(items));
+  }, [items]);
 
   function handleAddItem(item) {
     setItems((prevItems) => [...prevItems, item]);
